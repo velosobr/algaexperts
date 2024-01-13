@@ -47,6 +47,17 @@ class Array {
             return false
         }
 
+
+        fun sortedSquaredArray(array: List<Int>): List<Int> {
+            val returnList: MutableList<Int> = mutableListOf()
+            for (i in array) returnList.add(i*i)
+            return returnList
+        }
+        fun sortedSquaredArrayMapFunVersion(array: List<Int>): List<Int> {
+            val returnList: MutableList<Int> = mutableListOf()
+            array.mapTo(returnList) { it * it }
+            return returnList
+        }
     }
 
 }

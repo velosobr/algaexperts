@@ -7,5 +7,7 @@ fun main() {
     val isValidSubsequenceArray = listOf(5, 1, 22, 25, 6, -1, 8, 10)
     val sequence = listOf(1, 6, -1, 10)
     println("isValidSubsequence: ${Array.isValidSubsequence(isValidSubsequenceArray, sequence)}")
+    val sortedSquaredArrayArray = listOf(1, 2, 3, 5, 6, 8, 9)
+    println("sortedSquaredArray: ${Array.sortedSquaredArray(sortedSquaredArrayArray)}")
 
 }
