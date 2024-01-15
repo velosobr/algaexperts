@@ -50,13 +50,48 @@ class Array {
 
         fun sortedSquaredArray(array: List<Int>): List<Int> {
             val returnList: MutableList<Int> = mutableListOf()
-            for (i in array) returnList.add(i*i)
-            return returnList
+            for (i in array) returnList.add(i * i)
+            return returnList.sorted()
         }
-        fun sortedSquaredArrayMapFunVersion(array: List<Int>): List<Int> {
+
+        fun sortedSquaredArrayAddInOrder(array: List<Int>): List<Int> {
             val returnList: MutableList<Int> = mutableListOf()
-            array.mapTo(returnList) { it * it }
-            return returnList
+            var aux1 = 0
+            var aux2 = 0
+
+            for (i in array) {
+                aux2 = i * i
+                if (aux2 < aux1) {
+                    returnList.add(aux1, aux2)
+                }
+                returnList.add(i * i)
+            }
+            return returnList.sorted()
+        }
+
+        fun sortedSquaredArrayMapFunVersion(array: List<Int>): List<Int> {
+            return array.map { it * it }.sorted()
+        }
+
+        /** {
+        "competitions": [
+        ["HTML", "C#"],
+        ["C#", "Python"],
+        ["Python", "HTML"]
+        ],
+        "results": [0, 0, 1]
+        }
+         Output:
+        "Python"
+         */
+        fun tournamentWinner(competitions: List<List<String>>, results: List<Int>): String {
+            // Write your code here.
+            var hashtable = hashMapOf<String,String>()
+            for (i in competitions) {
+                val auxList = competitions.get(i)
+               if (!hashtable.containsValue(competitions[i],))
+            }
+            return ""
         }
     }
 
