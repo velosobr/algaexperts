@@ -81,17 +81,50 @@ class Array {
         ],
         "results": [0, 0, 1]
         }
-         Output:
+        Output:
         "Python"
          */
         fun tournamentWinner(competitions: List<List<String>>, results: List<Int>): String {
             // Write your code here.
-            var hashtable = hashMapOf<String,String>()
-            for (i in competitions) {
-                val auxList = competitions.get(i)
-               if (!hashtable.containsValue(competitions[i],))
+            val hashtableTournament = hashMapOf<String, Int>()
+            var winningTeam = ""
+            var highScore = 0
+
+            for ((i, team) in competitions.withIndex()) {
+                val resultMatch = results[i]
+                val teamPosition = if (resultMatch == 0) 1 else 0
+                val actualWinningTeam = team[teamPosition]
+                val oldScore = if (hashtableTournament.contains(actualWinningTeam)) {
+                    hashtableTournament[actualWinningTeam]
+                } else {
+                    0
+                }
+                val newScore: Int = oldScore?.plus(3) ?: 0
+                if (newScore > highScore) {
+                    highScore = newScore
+                    winningTeam = actualWinningTeam
+                }
+                hashtableTournament[actualWinningTeam] = newScore
+
             }
-            return ""
+            return winningTeam
+        }
+        fun tournamentWinner2(competitions: List<List<String>>, results: List<Int>): String {
+            val scores = mutableMapOf<String, Int>()
+            var winningTeam = ""
+            var highScore = 0
+
+            competitions.forEachIndexed { index, (team1, team2) ->
+                val actualWinningTeam = if (results[index] == 0) team2 else team1
+                scores[actualWinningTeam] = scores.getOrDefault(actualWinningTeam, 0) + 3
+
+                if (scores[actualWinningTeam]!! > highScore) {
+                    highScore = scores[actualWinningTeam]!!
+                    winningTeam = actualWinningTeam
+                }
+            }
+
+            return winningTeam
         }
     }
 
