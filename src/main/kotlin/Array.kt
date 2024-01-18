@@ -126,6 +126,20 @@ class Array {
 
             return winningTeam
         }
+
+        /**
+         * input
+         * coins = [5,7,1,1,2,3,22]
+         * output
+         * 20
+         */
+        fun nonConstructibleChange(coins: MutableList<Int>): Int {
+            coins.sort()
+            println(coins)
+            return -1
+        }
+
     }
+
 
 }
