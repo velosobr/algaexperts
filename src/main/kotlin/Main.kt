@@ -23,6 +23,6 @@ fun main() {
     )
     val results = listOf(0, 0, 1)
     println("tournamentWinner: ${Array.tournamentWinner(competitions, results)}")
-    val coins = mutableListOf(1, 2, 5, 3, 1)
+    val coins = mutableListOf(20)
     println("nonConstructibleChange: ${Array.nonConstructibleChange(coins)}")
 }

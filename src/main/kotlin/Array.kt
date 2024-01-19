@@ -109,6 +109,7 @@ class Array {
             }
             return winningTeam
         }
+
         fun tournamentWinner2(competitions: List<List<String>>, results: List<Int>): String {
             val scores = mutableMapOf<String, Int>()
             var winningTeam = ""
@@ -135,8 +136,14 @@ class Array {
          */
         fun nonConstructibleChange(coins: MutableList<Int>): Int {
             coins.sort()
-            println(coins)
-            return -1
+            var returnValue = 1
+            for (i in coins) {
+                if (returnValue >= i)
+                    returnValue += i
+                else
+                    returnValue++
+            }
+            return returnValue
         }
 
     }
