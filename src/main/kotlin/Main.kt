@@ -1,6 +1,6 @@
 fun main() {
     println("Repo para 100 challenge algoExperts")
-
+/**
     var array: MutableList<Int> = mutableListOf(3, 5, -4, 8, 11, 1, -1, 6)
     val targetSum = 10
     println("twoNumberSum: ${Array.twoNumberSum(array, targetSum)}")
@@ -23,6 +23,8 @@ fun main() {
     )
     val results = listOf(0, 0, 1)
     println("tournamentWinner: ${Array.tournamentWinner(competitions, results)}")
-    val coins = mutableListOf(20)
+    */
+
+    val coins = mutableListOf(5, 7, 1, 1, 2, 3, 22)
     println("nonConstructibleChange: ${Array.nonConstructibleChange(coins)}")
 }

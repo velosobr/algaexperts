@@ -135,18 +135,19 @@ class Array {
          * 20
          */
         fun nonConstructibleChange(coins: MutableList<Int>): Int {
+
             coins.sort()
+            //1,1,2,3,5,7,22
             var returnValue = 1
             for (i in coins) {
-                if (returnValue >= i)
+                if (returnValue < i)
+                    return returnValue
+                else {
                     returnValue += i
-                else
-                    returnValue++
+                }
             }
             return returnValue
         }
-
     }
-
 
 }
