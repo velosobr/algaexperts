@@ -148,6 +148,52 @@ class Array {
             }
             return returnValue
         }
+
+        /**
+         * You are running a classroom and suspect that some of your students are passing around the answer to a
+         * multiple-choice question disguised as a random note.
+         * Your task is to write a function that, given a list of words and a note, finds and returns the word in
+         * the list that is scrambled inside the note, if any exists. If none exist, it returns the result "-" as
+         * a string. There will be at most one matching word. The letters don't need to be in order or next
+         * to each other. The letters cannot be reused.
+         */
+        fun find(words: List<String>, note: String): String {
+            for (word in words) {
+                if (word.all { char -> word.count { it == char } <= note.count { it == char } }) {
+                    return word
+                }
+            }
+            return "-"
+        }
+
+        fun explainedFind(words: List<String>, note: String): String {
+            // Itera sobre cada palavra na lista de palavras
+            for (word in words) {
+                var isMatch = true
+
+                // Itera sobre cada caractere na palavra
+                for (char in word) {
+                    // Verifica se a contagem de um caractere específico na palavra é menor ou igual à contagem desse caractere na nota
+                    if (word.count { it == char } > note.count { it == char }) {
+                        isMatch = false
+                        break
+                    }
+                }
+
+                // Se a condição for verdadeira para todos os caracteres na palavra, retorna a palavra
+                if (isMatch) {
+                    return word
+                }
+            }
+
+            // Se nenhuma palavra satisfizer a condição, retorna "-"
+            return "-"
+        }
+
+        fun transposeMatrix(matrix: MutableList<MutableList<Int>>): MutableList<MutableList<Int>> {
+
+            return mutableListOf()
+        }
     }
 
 }
