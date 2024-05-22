@@ -37,11 +37,13 @@ class StringsDS {
         Sample:"abcdcba"
          */
         fun isPalindrome(string: String): Boolean {
-            // Write your code here.
-            for ((indice, value) in string.withIndex()) {
-                println("indice: $indice e value:$value")
+            val length = string.length
+            for (i in 0..<length/2) {
+                if (string[i] != string[length-i -1]){
+                    return false
+                }
             }
-            return false
+            return true
         }
     }
 }
