@@ -25,15 +25,20 @@ fun main() {
     println("tournamentWinner: ${Array.tournamentWinner(competitions, results)}")
     */
 
-    val coins = mutableListOf(5, 7, 1, 1, 2, 3, 22)
-    println("nonConstructibleChange: ${Array.nonConstructibleChange(coins)}")
-    val words = mutableListOf("baby", "referee", "cat", "dada", "dog", "bird", "ax", "baz")
-    val note1 = "ctay"
-  val note2 = "bcanihjsrrrferet"
-  val note3 = "tbaykkjlga"
-  val note4 = "bbbblkkjbaby"
-  val note5 = "dad"
-  val note6 = "breadmaking"
-  val note7 = "dadaa"
-    println(Array.explainedFind(words, note6))
+//    val coins = mutableListOf(5, 7, 1, 1, 2, 3, 22)
+//    println("nonConstructibleChange: ${Array.nonConstructibleChange(coins)}")
+//    val words = mutableListOf("baby", "referee", "cat", "dada", "dog", "bird", "ax", "baz")
+//    val note1 = "ctay"
+//  val note2 = "bcanihjsrrrferet"
+//  val note3 = "tbaykkjlga"
+//  val note4 = "bbbblkkjbaby"
+//  val note5 = "dad"
+//  val note6 = "breadmaking"
+//  val note7 = "dadaa"
+//    println(Array.explainedFind(words, note6))
+
+    val list = mutableListOf("abc", "bcd", "cbad")
+StringsDS.commonCharacters(list)
+
+    println(StringsDS.isPalindrome("abcdedcba"))
 }
