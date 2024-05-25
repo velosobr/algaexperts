@@ -1,7 +1,16 @@
+/**
+ * Classe de estudo de Arrays
+ */
 class Array {
 
 
     companion object {
+        /**
+         * Função que recebe uma lista de inteiros e um alvo, e retorna uma lista de dois números que somam o alvo.
+         * @param array A lista de inteiros.
+         * @param targetSum O alvo da soma.
+         * @return Uma lista de dois inteiros que somam o alvo, ou uma lista vazia se não houver tal par.
+         */
         fun twoNumberSum(array: MutableList<Int>, targetSum: Int): List<Int> {
             // Write your code here.
             val list: MutableList<Int> = mutableListOf()
@@ -34,6 +43,12 @@ class Array {
             return listOf()
         }
 
+        /**
+         * Função que verifica se uma sequência é válida em um array.
+         * @param array O array a ser verificado.
+         * @param sequence A sequência a ser verificada.
+         * @return Verdadeiro se a sequência é válida, falso caso contrário.
+         */
         fun isValidSubsequence(array: List<Int>, sequence: List<Int>): Boolean {
             var index = 0
             for (i in array.indices) {
@@ -48,6 +63,11 @@ class Array {
         }
 
 
+        /**
+         * Função que recebe uma lista de inteiros e retorna uma lista dos quadrados desses inteiros, ordenada.
+         * @param array A lista de inteiros.
+         * @return Uma lista dos quadrados dos inteiros, ordenada.
+         */
         fun sortedSquaredArray(array: List<Int>): List<Int> {
             val returnList: MutableList<Int> = mutableListOf()
             for (i in array) returnList.add(i * i)
@@ -73,19 +93,25 @@ class Array {
             return array.map { it * it }.sorted()
         }
 
-        /** {
-        "competitions": [
-        ["HTML", "C#"],
-        ["C#", "Python"],
-        ["Python", "HTML"]
-        ],
-        "results": [0, 0, 1]
-        }
-        Output:
-        "Python"
+
+        /**
+         * Função que determina o vencedor de um torneio.
+         * @param competitions Uma lista de competições.
+         * @param results Uma lista de resultados.
+         * @return O vencedor do torneio.
          */
         fun tournamentWinner(competitions: List<List<String>>, results: List<Int>): String {
-            // Write your code here.
+            /** {
+            "competitions": [
+            ["HTML", "C#"],
+            ["C#", "Python"],
+            ["Python", "HTML"]
+            ],
+            "results": [0, 0, 1]
+            }
+            Output:
+            "Python"
+             */
             val hashtableTournament = hashMapOf<String, Int>()
             var winningTeam = ""
             var highScore = 0
@@ -129,6 +155,9 @@ class Array {
         }
 
         /**
+         * Função que determina a menor alteração não construtível.
+         * @param coins Uma lista de moedas.
+         * @return A menor alteração não construtível.
          * input
          * coins = [5,7,1,1,2,3,22]
          * output
@@ -140,8 +169,7 @@ class Array {
             //1,1,2,3,5,7,22
             var returnValue = 1
             for (i in coins) {
-                if (returnValue < i)
-                    return returnValue
+                if (returnValue < i) return returnValue
                 else {
                     returnValue += i
                 }
