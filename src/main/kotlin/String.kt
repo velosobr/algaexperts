@@ -38,12 +38,48 @@ class StringsDS {
          */
         fun isPalindrome(string: String): Boolean {
             val length = string.length
-            for (i in 0..<length/2) {
-                if (string[i] != string[length-i -1]){
+            for (i in 0..<length / 2) {
+                if (string[i] != string[length - i - 1]) {
                     return false
                 }
             }
             return true
         }
+
+        /**
+         * CAesar Cipher Encrypter
+         * Given an non-empty string of lowercase letters and a non-negativa
+         * integer representing a key, write a function that returns a new string
+         * obtained by shifting every letter in the unput string by k positions in
+         * the alphabet, where k is the key.
+         *
+         * Note that letter should "wrap" around the alphabet; in other words, the letter Z shifted
+         * by one returns the letter A.
+         *
+         * Sample Input
+         * string = "xyz"
+         * key = 2
+         *
+         * Sample Output
+         * "zab"
+         */
+        fun caesarCipherEncryptor(string: String, key: Int): String {
+            val alphabet = "abcdefghijklmnopqrstuvwxyz"
+            var outputString = ""
+
+            for (letter in string) {
+                var position = alphabet.indexOf(letter)
+                var newPosition = position + key
+                while (newPosition >= alphabet.length) {
+                    newPosition -= alphabet.length
+                }
+
+                val newLetter = alphabet[newPosition]
+                outputString += newLetter
+            }
+
+            return outputString
+        }
     }
+
 }
