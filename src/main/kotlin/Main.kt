@@ -1,21 +1,71 @@
 fun main() {
     println("Repo para 100 challenge algoExperts")
-/**
-    var array: MutableList<Int> = mutableListOf(3, 5, -4, 8, 11, 1, -1, 6)
+    testCaesarCipherEncryptor()
+    testIsPalindrome()
+    testCommonCharacters()
+
+    println("\n=====================\n")
+    testTwoNumberSum()
+    testIsValidSubsequence()
+    testSortedSquaredArray()
+    testTournamentWinner()
+    testNonConstructibleChange()
+    testFind()
+    testTransposeMatrix()
+    // Adicione chamadas de função para outros testes aqui
+}
+
+fun testCaesarCipherEncryptor() {
+    val testCases = listOf(
+        Pair("xyz", 2),
+        Pair("abc", 0),
+        Pair("abc", 3),
+        Pair("xyz", 5),
+        Pair("abc", 26),
+        Pair("abc", 52),
+        Pair("abc", 57),
+        Pair("xyz", 25),
+        Pair("iwufqnkqkqoolxzzlzihqfm", 25),
+        Pair("ovmqkwtujqmfkao", 52),
+        Pair("mvklahvjcnbwqvtutmfafkwiuagjkzmzwgf", 7),
+        Pair("kjwmntauvjjnmsagwgawkagfuaugjhawgnawgjhawjgawbfawghesh", 15)
+    )
+
+    for ((string, key) in testCases) {
+        val output = StringsDS.caesarCipherEncryptor(string, key)
+        println("caesarCipherEncryptor: $output")
+    }
+}
+
+fun testIsPalindrome() {
+    val string = "abcdedcba"
+    println("isPalindrome: ${StringsDS.isPalindrome(string)}")
+}
+
+fun testCommonCharacters() {
+    val list = mutableListOf("abc", "bcd", "cbad")
+    println("commonCharacters: ${StringsDS.commonCharacters(list)}")
+}
+
+
+fun testTwoNumberSum() {
+    val array = mutableListOf(3, 5, -4, 8, 11, 1, -1, 6)
     val targetSum = 10
     println("twoNumberSum: ${Array.twoNumberSum(array, targetSum)}")
-    val isValidSubsequenceArray = listOf(5, 1, 22, 25, 6, -1, 8, 10)
-    val sequence = listOf(1, 6, -1, 10)
-    println("isValidSubsequence: ${Array.isValidSubsequence(isValidSubsequenceArray, sequence)}")
-    val sortedSquaredArrayArray = listOf(1, 2, 3, 5, 6, 8, 9)
-    val sortedSquaredArrayArray2 = listOf(-1, -1, 2, 3, 3, 3, 4)
-    val sortedSquaredArrayArray3 = listOf(-3, -2, -1)
-    val sortedSquaredArrayArray4 = listOf(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
-    println("sortedSquaredArray: ${Array.sortedSquaredArray(sortedSquaredArrayArray)}")
-    println("sortedSquaredArrayArray2: ${Array.sortedSquaredArray(sortedSquaredArrayArray2)}")
-    println("sortedSquaredArrayArray3: ${Array.sortedSquaredArray(sortedSquaredArrayArray3)}")
-    println("sortedSquaredArrayArray4: ${Array.sortedSquaredArray(sortedSquaredArrayArray4)}")
+}
 
+fun testIsValidSubsequence() {
+    val array = listOf(5, 1, 22, 25, 6, -1, 8, 10)
+    val sequence = listOf(1, 6, -1, 10)
+    println("isValidSubsequence: ${Array.isValidSubsequence(array, sequence)}")
+}
+
+fun testSortedSquaredArray() {
+    val array = listOf(1, 2, 3, 5, 6, 8, 9)
+    println("sortedSquaredArray: ${Array.sortedSquaredArray(array)}")
+}
+
+fun testTournamentWinner() {
     val competitions = listOf(
         listOf("HTML", "C#"),
         listOf("C#", "Python"),
@@ -23,22 +73,25 @@ fun main() {
     )
     val results = listOf(0, 0, 1)
     println("tournamentWinner: ${Array.tournamentWinner(competitions, results)}")
-    */
-
-//    val coins = mutableListOf(5, 7, 1, 1, 2, 3, 22)
-//    println("nonConstructibleChange: ${Array.nonConstructibleChange(coins)}")
-//    val words = mutableListOf("baby", "referee", "cat", "dada", "dog", "bird", "ax", "baz")
-//    val note1 = "ctay"
-//  val note2 = "bcanihjsrrrferet"
-//  val note3 = "tbaykkjlga"
-//  val note4 = "bbbblkkjbaby"
-//  val note5 = "dad"
-//  val note6 = "breadmaking"
-//  val note7 = "dadaa"
-//    println(Array.explainedFind(words, note6))
-
-    val list = mutableListOf("abc", "bcd", "cbad")
-StringsDS.commonCharacters(list)
-
-    println(StringsDS.isPalindrome("abcdedcba"))
 }
+
+fun testNonConstructibleChange() {
+    val coins = mutableListOf(5, 7, 1, 1, 2, 3, 22)
+    println("nonConstructibleChange: ${Array.nonConstructibleChange(coins)}")
+}
+
+fun testFind() {
+    val words = mutableListOf("baby", "referee", "cat", "dada", "dog", "bird", "ax", "baz")
+    val note = "ctay"
+    println("find: ${Array.find(words, note)}")
+}
+
+fun testTransposeMatrix() {
+    val matrix = mutableListOf(
+        mutableListOf(1, 2, 3),
+        mutableListOf(4, 5, 6),
+        mutableListOf(7, 8, 9)
+    )
+    println("transposeMatrix: ${Array.transposeMatrix(matrix)}")
+}
+// Adicione funções de teste para outros algoritmos aqui
