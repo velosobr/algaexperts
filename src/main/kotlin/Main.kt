@@ -4,19 +4,23 @@ fun main() {
     println("\n=====================\n")
     println("\n========ARRAY=======\n")
     println("\n=====================\n")
-//    testTwoNumberSum()
-//    testIsValidSubsequence()
-//    testSortedSquaredArray()
-//    testTournamentWinner()
-//    testNonConstructibleChange()
-//    testFind()
+    testTwoNumberSum()
+    testIsValidSubsequence()
+    testSortedSquaredArray()
+    testTournamentWinner()
+    testNonConstructibleChange()
+    testFind()
     testTransposeMatrix()
-//    println("\n=====================\n")
-//    println("\n========STRING=======\n")
-//    println("\n=====================\n")
-//    testIsPalindrome()
-//    testCommonCharacters()
-//    testCaesarCipherEncryptor()
+    println("\n=====================\n")
+    println("\n========STRING=======\n")
+    println("\n=====================\n")
+    testIsPalindrome()
+    testCommonCharacters()
+    testCaesarCipherEncryptor()
+    println("\n=====================\n")
+    println("\n========BINARY SEARCH TREES=======\n")
+    println("\n=====================\n")
+    testFindClosestValueInBst()
     // Adicione chamadas de função para outros testes aqui
 }
 
@@ -114,5 +118,20 @@ fun testTransposeMatrix() {
         mutableListOf(7, 8, 9)
     )
     println("transposeMatrix: ${Array.transposeMatrix(matrix)}")
+}
+
+fun testFindClosestValueInBst() {
+    val tree = BinarySearchTrees.BST(10)
+    tree.left = BinarySearchTrees.BST(5)
+    tree.right = BinarySearchTrees.BST(15)
+    tree.left?.left = BinarySearchTrees.BST(2)
+    tree.left?.right = BinarySearchTrees.BST(5)
+    tree.left?.left?.left = BinarySearchTrees.BST(1)
+    tree.right?.left = BinarySearchTrees.BST(13)
+    tree.right?.right = BinarySearchTrees.BST(22)
+    tree.right?.left?.right = BinarySearchTrees.BST(14)
+    val target = 12
+    val expected = 13
+    println("findClosestValueInBst: ${BinarySearchTrees.findClosestValueInBst(tree, target)} == $expected")
 }
 // Adicione funções de teste para outros algoritmos aqui
