@@ -218,9 +218,58 @@ class Array {
             return "-"
         }
 
+        /**
+         * Transpose Matrix
+         *
+         * You're given a 2D array of integers. Write a function
+         * that returns the transpose of the matrix.
+         * The transpose of a matrix is a flipped version of the original matrix across
+         * its main diagonal (which runs from top-left to bottom-right); it switches
+         * the row and column indices of the original matrix.
+         * You can assume the input matrix always has at least 1 value; however its
+         * width and height are not necessarily the same.
+         *
+         *Sample Input
+         * matrix = [
+         *    [1, 2],
+         *    ]
+         *Sample Output
+         * [
+         *   [1],
+         *   [2]
+         *   ]
+         *
+         *
+         * Here's a step-by-step explanation of the algorithm:
+         * val outputMatrix = mutableListOf<MutableList<Int>>(): This line initializes an empty mutable list of mutable lists of integers. This will be the transposed matrix.
+         *
+         * The println statement is used for debugging purposes. It prints the original matrix, the first row of the matrix, the number of columns in the matrix (which is the size of the first row), and the number of rows in the matrix (which is the size of the matrix).
+         *
+         * for (i in 0 until matrix[0].size): This loop iterates over the columns of the original matrix. The variable i represents the current column.
+         *
+         * val row = mutableListOf<Int>(): This line initializes an empty mutable list of integers. This will be a row in the transposed matrix.
+         *
+         * for (j in 0 until matrix.size): This loop iterates over the rows of the original matrix. The variable j represents the current row.
+         *
+         * row.add(matrix[j][i]): This line adds the element at the jth row and ith column of the original matrix to the row list. This effectively switches the row and column indices of the element, which is the key step in transposing a matrix.
+         *
+         * outputMatrix.add(row): After all elements in the current column of the original matrix have been added to the row list, the row list is added to the outputMatrix. This effectively adds a new row to the transposed matrix.
+         *
+         *  return outputMatrix: After all columns of the original matrix have been processed, the outputMatrix is returned. This is the transposed matrix.
+         */
         fun transposeMatrix(matrix: MutableList<MutableList<Int>>): MutableList<MutableList<Int>> {
-
-            return mutableListOf()
+            val outputMatrix = mutableListOf<MutableList<Int>>()
+            println(
+                "matrix: $matrix" + "matrix[0]: ${matrix[0]}" + "matrix[0].size: ${matrix[0].size}" + "matrix.size: ${matrix.size}"
+            )
+            for (i in 0 until matrix[0].size) {
+                val row = mutableListOf<Int>()
+                for (j in 0 until matrix.size) {
+                    row.add(matrix[j][i])
+                }
+                outputMatrix.add(row)
+            }
+            return outputMatrix
         }
     }
 

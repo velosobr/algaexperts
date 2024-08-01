@@ -10,21 +10,24 @@ class StringsDS {
          *
          * Note tha the strings are not guaranteed to only contain alphanumeric characters. The List you return can be
          * in any order
-         * Strings ["abc", "bcd", "cbad"]
+         * Sample input
+         * strings = ["abc", "bcd", "cbaccd"]
+         * Sample output
+         * ["b", "c"]
          */
         fun commonCharacters(strings: MutableList<String>): List<String> {
+            val outputCharacters = mutableListOf("")
 
-            var commonCharactersList = strings[0].toList()
+            val firstString = strings[0]
 
-
-            for (i in 1 until strings.size) {
-                println(i)
-                for (letra in commonCharactersList) {
-                    println(letra)
-                }
+            for (char in strings) {
 
             }
-            return mutableListOf()
+
+
+
+
+            return outputCharacters
         }
 
         /**
@@ -47,7 +50,7 @@ class StringsDS {
         }
 
         /**
-         * CAesar Cipher Encrypter
+         * Caesar Cipher Encrypter
          * Given an non-empty string of lowercase letters and a non-negativa
          * integer representing a key, write a function that returns a new string
          * obtained by shifting every letter in the unput string by k positions in
@@ -80,6 +83,9 @@ class StringsDS {
 
             return outputString
         }
+
+
+
     }
 
 }

@@ -1,17 +1,22 @@
 fun main() {
     println("Repo para 100 challenge algoExperts")
-    testCaesarCipherEncryptor()
-    testIsPalindrome()
-    testCommonCharacters()
 
     println("\n=====================\n")
-    testTwoNumberSum()
-    testIsValidSubsequence()
-    testSortedSquaredArray()
-    testTournamentWinner()
-    testNonConstructibleChange()
-    testFind()
+    println("\n========ARRAY=======\n")
+    println("\n=====================\n")
+//    testTwoNumberSum()
+//    testIsValidSubsequence()
+//    testSortedSquaredArray()
+//    testTournamentWinner()
+//    testNonConstructibleChange()
+//    testFind()
     testTransposeMatrix()
+//    println("\n=====================\n")
+//    println("\n========STRING=======\n")
+//    println("\n=====================\n")
+//    testIsPalindrome()
+//    testCommonCharacters()
+//    testCaesarCipherEncryptor()
     // Adicione chamadas de função para outros testes aqui
 }
 
@@ -43,8 +48,24 @@ fun testIsPalindrome() {
 }
 
 fun testCommonCharacters() {
-    val list = mutableListOf("abc", "bcd", "cbad")
-    println("commonCharacters: ${StringsDS.commonCharacters(list)}")
+    val testCases = listOf(
+        Pair(listOf("abc", "bcd", "cbad"), listOf("b", "c")),
+        Pair(listOf("a"), listOf("a")),
+        Pair(listOf("a", "b", "c"), listOf()),
+        Pair(listOf("aa", "aa"), listOf("a")),
+        Pair(listOf("aaaa", "a"), listOf("a")),
+        Pair(listOf("abcde", "aa", "foobar", "foobaz", "and this is a string", "aaaaaaaa", "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeea"), listOf("a")),
+        Pair(listOf("abcdef", "fedcba", "abcefd", "aefbcd", "efadbc", "effffffffffffbcda", "eeeeeffffffbbbbbaaaaaccccdddd", "**************abdcef************"), listOf("a", "b", "c", "d", "e", "f")),
+        Pair(listOf("ab&cdef!", "f!ed&cba", "a&bce!d", "ae&fb!cd", "efa&!dbc", "eff!&fff&fffffffbcda", "eeee!efff&fffbbbbbaaaaaccccdddd", "*******!***&****abdcef************", "*******!***&****a***********f*", "*******!***&****b***********c*"), listOf("&", "!")),
+        Pair(listOf("*abcd", "def*", "******d*****"), listOf("*", "d")),
+        Pair(listOf("*abc!d", "de!f*", "**!!!****d*****"), listOf("*", "!", "d"))
+    )
+
+    for ((strings, expected) in testCases) {
+        val output = StringsDS.commonCharacters(strings.toMutableList())
+        println("commonCharacters: $output")
+        assert(output == expected) { "Expected $expected but got $output" }
+    }
 }
 
 
