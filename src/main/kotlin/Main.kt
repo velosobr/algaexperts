@@ -21,6 +21,12 @@ fun main() {
     println("\n========BINARY SEARCH TREES=======\n")
     println("\n=====================\n")
     testFindClosestValueInBst()
+
+    println("\n=====================\n")
+    println("\n========BINARY TREE=======\n")
+    println("\n=====================\n")
+    testBranchSums()
+    testNodeDepths()
     // Adicione chamadas de função para outros testes aqui
 }
 
@@ -133,5 +139,63 @@ fun testFindClosestValueInBst() {
     val target = 12
     val expected = 13
     println("findClosestValueInBst: ${BinarySearchTrees.findClosestValueInBst(tree, target)} == $expected")
+}
+
+/*
+
+     1
+    / \
+   2   3
+  / \ / \
+ 4  5 6  7
+/ \ /
+8 9 10
+
+
+
+
+ */
+fun testBranchSums() {
+    val tree = BinaryTree.BinaryTree(1)
+    tree.left = BinaryTree.BinaryTree(2)
+    tree.right = BinaryTree.BinaryTree(3)
+    tree.left?.left = BinaryTree.BinaryTree(4)
+    tree.left?.right = BinaryTree.BinaryTree(5)
+    tree.right?.left = BinaryTree.BinaryTree(6)
+    tree.right?.right = BinaryTree.BinaryTree(7)
+    tree.left?.left?.left = BinaryTree.BinaryTree(8)
+    tree.left?.left?.right = BinaryTree.BinaryTree(9)
+    tree.left?.right?.left = BinaryTree.BinaryTree(10)
+    val expected = listOf(15, 16, 18, 10, 11)
+    println("branchSums: ${BinaryTree.branchSums(tree)} == $expected ${BinaryTree.branchSums(tree) == expected}")
+
+}
+
+/*
+ Sample Input
+    tree =     1
+            /     \
+            2       3
+          /   \    /  \
+         4     5  6    7
+        / \
+        8 9
+
+    Sample Output
+    16
+ */
+fun testNodeDepths() {
+    val tree = BinaryTree.BinaryTree(1)
+    tree.left = BinaryTree.BinaryTree(2)
+    tree.right = BinaryTree.BinaryTree(3)
+    tree.left?.left = BinaryTree.BinaryTree(4)
+    tree.left?.right = BinaryTree.BinaryTree(5)
+    tree.right?.left = BinaryTree.BinaryTree(6)
+    tree.right?.right = BinaryTree.BinaryTree(7)
+    tree.left?.left?.left = BinaryTree.BinaryTree(8)
+    tree.left?.left?.right = BinaryTree.BinaryTree(9)
+    val expected = 16
+    println("nodeDepths: ${BinaryTree.nodeDepths(tree)} == $expected ${BinaryTree.nodeDepths(tree) == expected}")
+
 }
 // Adicione funções de teste para outros algoritmos aqui
