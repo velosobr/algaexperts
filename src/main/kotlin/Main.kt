@@ -27,6 +27,7 @@ fun main() {
     println("\n=====================\n")
     testBranchSums()
     testNodeDepths()
+    testEvaluateExpressionTree()
     // Adicione chamadas de função para outros testes aqui
 }
 
@@ -196,6 +197,21 @@ fun testNodeDepths() {
     tree.left?.left?.right = BinaryTree.BinaryTree(9)
     val expected = 16
     println("nodeDepths: ${BinaryTree.nodeDepths(tree)} == $expected ${BinaryTree.nodeDepths(tree) == expected}")
+}
+
+fun testEvaluateExpressionTree() {
+    val tree = BinaryTree.BinaryTree(-1)
+    tree.left = BinaryTree.BinaryTree(-2)
+    tree.right = BinaryTree.BinaryTree(-3)
+    tree.left?.left = BinaryTree.BinaryTree(-4)
+    tree.left?.right = BinaryTree.BinaryTree(2)
+    tree.right?.left = BinaryTree.BinaryTree(8)
+    tree.right?.right = BinaryTree.BinaryTree(3)
+    tree.left?.left?.left = BinaryTree.BinaryTree(2)
+    tree.left?.left?.right = BinaryTree.BinaryTree(3)
+
+    val expected = 6
+    println("evaluateExpressionTree: ${BinaryTree.evaluateExpressionTree(tree)} == $expected ${BinaryTree.evaluateExpressionTree(tree) == expected}")
 
 }
 // Adicione funções de teste para outros algoritmos aqui
