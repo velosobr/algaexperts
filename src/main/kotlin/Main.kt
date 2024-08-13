@@ -28,6 +28,12 @@ fun main() {
     testBranchSums()
     testNodeDepths()
     testEvaluateExpressionTree()
+
+    println("\n=====================\n")
+    println("\n========GRAPH=======\n")
+    println("\n=====================\n")
+    testDepthFirstSearch()
+
     // Adicione chamadas de função para outros testes aqui
 }
 
@@ -213,5 +219,32 @@ fun testEvaluateExpressionTree() {
     val expected = 6
     println("evaluateExpressionTree: ${BinaryTree.evaluateExpressionTree(tree)} == $expected ${BinaryTree.evaluateExpressionTree(tree) == expected}")
 
+}
+
+fun testDepthFirstSearch() {
+    val graph = Graphs.Node("A")
+    graph.children = mutableListOf(
+        Graphs.Node("B"),
+        Graphs.Node("C"),
+        Graphs.Node("D")
+    )
+    graph.children[0].children = mutableListOf(
+        Graphs.Node("E"),
+        Graphs.Node("F")
+    )
+    graph.children[2].children = mutableListOf(
+        Graphs.Node("G"),
+        Graphs.Node("H")
+    )
+    graph.children[0].children[1].children = mutableListOf(
+        Graphs.Node("I"),
+        Graphs.Node("J")
+    )
+    graph.children[2].children[0].children = mutableListOf(
+        Graphs.Node("K")
+    )
+
+    val expected = listOf("A", "B", "E", "F", "I", "J", "C", "D", "G", "K", "H")
+    println("depthFirstSearch: ${Graphs.depthFirstSearch(graph)} == $expected ${Graphs.depthFirstSearch(graph) == expected}")
 }
 // Adicione funções de teste para outros algoritmos aqui
